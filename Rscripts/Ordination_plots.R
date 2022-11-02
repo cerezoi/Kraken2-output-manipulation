@@ -1,13 +1,13 @@
 #Importing the data 
 data=read.csv("kraken-report-genus-col2-taxa.csv", header=TRUE, row.names = 1)
-data_t=t(data)
-data_matrix=as.matrix(data_t)
+#data_t=t(data)
+#data_matrix=as.matrix(data_t)
 
 #data normalization using rarefaction method
 data_t=as.data.frame(t(data))
 S <- specnumber(data_t)
 raremax <-min(rowSums(data_t))
-Srare <- rrarefy(Data_t, raremax)
+Srare <- rrarefy(data_t, raremax)
 
 ##PCA plots 
 library(devtools)
